@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quiz Ladder pricing — Climber Pass</title>
+  <meta name="description" content="Quiz Ladder Climber Pass unlocks skips, an extra life, and checkpoints. Free play has no skips.">
+  <link rel="icon" href="img/logo.jpg">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560&family=Outfit:wght@400;650&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="nav">
+      <a class="brand" href="index.html"><img src="img/logo.jpg" alt="Quiz Ladder logo"> Quiz Ladder</a>
+      <nav class="nav-links"><a class="btn btn-gold" href="play.html">Climb</a></nav>
+    </header>
+    <section class="section">
+      <p class="kicker">Monetize the skip</p>
+      <h1>Pay to skip. Not to start.</h1>
+      <p class="lede">People can play Quiz Ladder free. They cannot skip a hard rung unless they subscribe. That is the product.</p>
+      <div class="grid-3">
+        <article class="card">
+          <h3>Free climb</h3>
+          <p class="price">$0</p>
+          <ul class="clean">
+            <li>Full 100-rung ladder</li>
+            <li>3 lives</li>
+            <li>No skips</li>
+            <li>Fall back to rung 1</li>
+            <li>Ads later, on this tier only</li>
+          </ul>
+        </article>
+        <article class="card">
+          <span class="badge">Main offer</span>
+          <h3>Climber Pass</h3>
+          <p class="price">$4.99 <span>/ month</span></p>
+          <ul class="clean">
+            <li>4 skips a day</li>
+            <li>4th life</li>
+            <li>Checkpoint every 20 rungs</li>
+            <li>No ads</li>
+            <li>Cancel any time</li>
+          </ul>
+          <a class="btn btn-gold" href="play.html">Subscribe before you skip</a>
+        </article>
+        <article class="card">
+          <h3>Summit year</h3>
+          <p class="price">$29.99 <span>once</span></p>
+          <ul class="clean">
+            <li>Same perks as the pass</li>
+            <li>Paid up front for 12 months</li>
+            <li>Better margin if someone hates monthly billing</li>
+          </ul>
+        </article>
+      </div>
+      <div class="prose">
+        <h2>How the money actually arrives</h2>
+        <p>Create a Stripe account, make a $4.99/month Payment Link, and paste that URL into <code>STRIPE_CLIMBER_LINK</code> in <code>js/game.js</code>. Send the success redirect to <code>play.html?pass=1</code>. That turns the pass on in this browser.</p>
+        <p>A static site cannot safely prove a payment by itself. When money starts coming in, add Stripe webhooks on a small backend so a pass cannot be faked with a URL. Until then, treat the preview code in the README as owner-only.</p>
+        <p>Ads are the second stream, not the first. Google AdSense usually wants a live site, original pages, and a privacy policy. Put ads only on the free climb so the pass feels worth paying for.</p>
+      </div>
+    </section>
+    <footer>
+      <span>Quiz Ladder</span>
+      <span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></span>
+    </footer>
+  </div>
+</body>
+</html>
