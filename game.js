@@ -2,7 +2,7 @@ const SUMMIT = 100;
 const FREE_LIVES = 3;
 const PASS_LIVES = 4;
 const DAILY_SKIPS = 4;
-const STRIPE_CLIMBER_LINK = ""; // paste your Stripe Payment Link here
+const STRIPE_CLIMBER_LINK = "https://paystack.shop/pay/bti-iulnmp";
 const OWNER_PREVIEW_CODE = "LADDER-PREVIEW";
 
 const state = {
@@ -234,7 +234,7 @@ function boot() {
   $("restartBtn").onclick = () => startGame(Number($("restartBtn").dataset.rung || 1));
   $("subscribeBtn").onclick = () => {
     if (STRIPE_CLIMBER_LINK) window.location.href = STRIPE_CLIMBER_LINK;
-    else $("payNote").textContent = "Stripe link is not connected yet. Use the owner preview code from the README, or paste a Payment Link into game.js.";
+    else $("payNote").textContent = "Payment link is not connected yet.";
   };
   $("previewBtn").onclick = () => {
     if ($("previewCode").value.trim().toUpperCase() === OWNER_PREVIEW_CODE) {
